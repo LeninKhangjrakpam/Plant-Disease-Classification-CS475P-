@@ -1,0 +1,158 @@
+
+\chapter{Sample Table of Content for thesis (Delete this chapter after completion)}
+\section{Description}
+
+\textbf{TODO}\\
+used TODO: on part that you think need more explaining or is incomplete. So, others will know
+TODO
+
+\begin{enumerate}
+    \item List of Figures
+    \item List of Tables
+    \item List of Images
+    \item Abstract
+    \item Introduction
+        \begin{enumerate}
+            \item Background and Motivation / Problem Statement
+            \item Research Importance
+            \item Scope of study
+            \item Research Methodology - Brief description of the process of research
+        \end{enumerate}
+    \item Literature Review: Paper source, with what we get/used from that paper
+    \item Theoretical Background
+        \begin{enumerate}
+            \item Convolutional Neural Networks (CNNs)
+            \item Architecture of CNNs - \\
+                    Convolutional Layers,
+                    Activation Functions -RELU,
+                    Pooling Layers,
+                    Fully Connected Layers,
+            \item Backpropagation in CNNs
+            
+            \item Transfer Learning and Fine Tuning \\
+                Definition and Concept
+                What is Transfer Learning?
+                How Transfer Learning Differs from Traditional Learning
+                Advantages and Disadvantages
+                Benefits of Using Pretrained Models
+                Common Challenges and Limitations
+                Fine Tuning Techniques
+                Selecting the Base Model
+                Freezing and Unfreezing Layers
+                Layer-wise Training and Learning Rates
+                
+           \item ML Classifiers
+                \begin{enumerate}
+                    \item ConvNet Models - VGG16, Xception, MobilenetV2 (in detail description of each of this models)
+                    \item Scratch Model - Description of our model
+                    \item Support Vector Machine (SVM)\\
+                        Theory and Concept
+                        Introduction to SVM
+                        Linearly Separable vs. Non-separable Data
+                        Mathematical Foundation
+                        Hyperplanes and Margins
+                        Kernel Functions (Linear, Polynomial, RBF)
+                        Optimization Objective
+                        Applications in Image Classification
+                        SVM as a Feature-based Classifier
+                        Integration with CNNs for Feature Extraction
+                        
+                    \item K-Nearest Neighbors (KNN)\\
+                        Theory and Concept
+                        Basics of KNN Algorithm
+                        Instance-based Learning
+                        Mathematical Foundation
+                        Distance Metrics (Euclidean, Manhattan, Minkowski)
+                        Choosing the Value of K
+                        Use of CNN Features with KNN\\
+                    \item Ensemble Techniques: Description of Ensemble Techniques (Tree based learner), laying the foundation of explaining random forest and xgboost
+                    \begin{enumerate}
+                        \item Random Forest\\                
+                        Theory and Concept
+                        Basics of Boosting and Random Forest
+                        Mathematical Foundation
+                        Objective Function and Regularization
+                        Strengths of Random Forest in Handling Complex Data
+                        Use of CNN Features with Random Forest
+                        
+                      \item Extreme Gradient Boosting (XGBoost)\\                
+                        Theory and Concept
+                        Basics of Boosting and XGBoost
+                        Mathematical Foundation
+                        Objective Function and Regularization
+                        Strengths of XGBoost in Handling Complex Data
+                        Use of CNN Features with XGBoost\\\\
+                    \end{enumerate}
+                    
+               \end{enumerate} 
+            \item Loss Function - MSE, Sparse Categorical Cross Entropy
+            \item Optimizer used in our training Model - ADAM, RMS PROP
+            \item Exploding and Vanishing dusGradient 
+            \item K Fold Validation - Stratified K Fold
+            \item Hyper parameter Tuning - Grid Search (used in ...)
+            \item Batch Normalisation
+            \item Dropout in Neural Network layer
+            \item Performance Metrics for Image Classification\\                
+                Accuracy
+                Definition and Calculation
+                Limitations in Imbalanced Datasets
+                Precision, Recall, F1-Score
+                Definitions and Importance
+                Precision vs. Recall Trade-off
+                F1-Score as a Balanced Metric
+                Confusion Matrix
+
+        \end{enumerate}
+    \item Dataset
+    \begin{enumerate}
+            \item Description of Plant Village Dataset: \\
+            Overview - Source and availability\\
+            Classes and labels - List of Plant Species and Associated Diseases, Number of Classes (11 in total)\\
+            Data Composition - Number of Images per Class, Image Resolutions and Formats, Distribution of Images across Classes\\
+            Example Images - Visual Examples of Images from Different Classes, Variability in Image Quality and Conditions
+            \item Data Processing Techniques \\
+            Image Augmentation - Importance of Augmentation in Preventing Overfitting, Techniques Used (e.g., Rotation, Flipping, Zooming, Cropping)\\
+            Data Preprocessing for each model VGG16, Xception, Mobilenet\\
+            Data Splitting - Training, Validation, and Test Split Ratios, Stratified Splitting to Maintain Class Distribution, Rationale for Chosen Split Ratios\\
+            Handling Class Imbalance - Techniques for Managing Imbalanced Data (e.g., Oversampling, Undersampling), Impact on Model Training and Evaluation
+        
+            \item Exploratory Data Analysis (EDA) \\
+            Statistical Summary - Basic Statistics of the Dataset (e.g., Mean, Standard Deviation of Pixel Values), Class Distribution Analysis\\
+            Visual Analysis - Visualizing Class Distributions, Example Visualizations of Augmented Images\\
+            Insights from EDA - Key Observations from the Analysis, Potential Issues Identified and Mitigation Strategies
+        \end{enumerate}
+    \item Methodology: Explain the steps\\
+    Overview of Transfer Learning and Fine Tuning Approach\\
+        Pretrained Models
+        VGG16 Model
+        Xception Model
+        MobileNetV2 Model\\
+    Custom CNN Model\\Design and Architecture, Key Components and Layers (CNN10L)\\ 
+    Feature Extraction using MobileNet\\
+    Overview of Classifiers\\
+        SVM,
+        KNN,
+        Random Forest,
+        XGBoost\\
+    
+    \item Result and Discussion\\Comparative Analysis of Models\\
+        Model Interpretation and Visualisation\\
+        Visualizing CNN Layers - Techniques for Visualization (e.g., Feature Maps, Activation Maps), Results and Interpretation\\
+        Image Masking and Activation Areas - Methodology, Results and Interpretation\\
+        Other Model Interpretation Techniques - \\
+        PCA, T-SNE, \\
+        Grad-CAM (Gradient-weighted Class Activation Mapping), Saliency Maps
+    \item Conclusion\\
+        Summary of Findings
+        Contributions of the Study
+        Limitations of the Study
+        Future Work
+    \item Bibliography
+    \item Appendices\\
+        Additional Figures and Tables
+        Detailed Hyperparameter Configurations
+        Code Snippets (optional, if brief and relevant)
+\end{enumerate}
+
+
+\newpage

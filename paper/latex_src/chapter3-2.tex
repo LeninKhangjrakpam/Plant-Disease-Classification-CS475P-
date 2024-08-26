@@ -1,0 +1,13 @@
+\section{Transfer Learning and Fine Tuning}
+
+\subsection{Transfer Learning}
+It is a technique in which knowledge learned from a  related task is re-used to boost the perfomance on a related task.\cite{tf} It is mainly used when the data available for training is very small.
+Specifically, in ConvNet network, many image features such as lines, edges (seen in almost every image) are common to a diffrent image datasets. So, we don't, need to really train our model from scratch as we can used this pre-learned features on our new datasets. That is why large CNN models are rarely trained completely from scratch as large quality labelled datasets and heavy computational resources are hard to find and expensive.\par\vspace{1em}
+For eg: in image classification  tasks, knowledge gained from learning to recognize car can be used in recognizing trucks.\par\vspace{1em}
+------------------------------------------------------------------------------------------
+
+\subsection{Fine Tuning}
+It is an approach to transfer learning in which the parameter of a pretrained model are trained on  a new datasets\cite{ft}. Fine tuning can be done on the entire neural network layer or a subset of the layers, in this case, the layers that are not selected for fine tuning, have their weights frozen during back-propagation (i.e. these weights are not trained/changed) during fine tuning process). A model can also be augmented with adapters, which consists of a far fewer params than the original model, and fine-tuned in a parameter efficient way by adjusting the weights of the adapters models only and leaving the other weights frozen\cite{efficient-fine-tuning}. \par\vspace{1em}
+For architecture such as large, deep ConvNet models, its common to keep the lower layer frozens (i.e. layers that are closed to the input layers) as they capture low level features like detecting edges, lines, textures, etc. while the upper layers capture high-level features that are more related to the task in which the models is trained on\cite{Visualizing-and-Understanding-Convolutional-Networks}. More detailed visualisation of the feature learned by ConvNet model are present in \autoref{chap:Model Interpretation and Visualisation}
+\par\vspace{1em}
+Models that are pretrained on large , general corpora are usually fine tuned by reusing the model parameter as starting points and adding task specific layer from scratch. Fine-tuning the full model is common and often yield better results than training from scratch, however they are computationally expensive.\cite{fine-tuned-pretrained-model-1}\cite{fine-tuned-pretrained-model-2} \par\vspace{1em}

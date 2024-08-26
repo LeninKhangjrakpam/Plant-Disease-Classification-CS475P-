@@ -1,0 +1,19 @@
+\chapter{Conclusion}
+
+\section{Summary of Findings}
+In this project we have conducted various comprehensive studies of various image classification models,using the PlantVillage dataset to detect plant diseases. Our approach included utilizing several pre-trained models, namely MobileNetV2, VGG16, Xception for transfer learning and fine tuning, and also training traditional classifiers like SVM, KNN, Random Forest, and XGBoost on extracted features.\par \vspace{1em}
+The results obtained from this study demonstrated that deep learning models, particularly convNet models, outperformed traditional machine learning classifiers in accuracy and other classifier evaluation metrics such as Precision, Recall, F-Score. 
+\par\vspace{1em}
+To further study the decisions made by the models, we also employed several model interpretation techniques. We visualized the first layer filters and feature maps of our best performing models, analyzed the model's response to masked images, and used dimensionality reduction techniques like PCA and t-SNE to plot feature spaces before and after fine-tuning. Additionally, we also implemented nearest neighbour search in feature space using cosine similarity and lastly, we also generate saliency maps to highlight important image regions influencing predictions. From these, we observe that our model generalised well on the Plant Village Datasets.
+\par\vspace{1em}
+
+\section{Future Work}
+For future work,  we are planning to train our model on full 38 classes in Plant Village Dataset, instead of the reduced 11 ones (the current classes that is used in this work).
+And check whether the performance of CNN10L increases by training it on \textbf{ImageNet} and fine-tune with Plant Village.\par \vspace{1em}
+We are also planning to include newer transformer based models\cite{attention-is-all-you-need} such as \textit{Vision Transformer (ViT)} model\cite{vision-transformer} in our comparison study.\par \vspace{1em}
+Furthermore, we are also planning to add more features to our Plant Disease Detection App. Some of the features that we are planning are: integrating alert system for plant disease based on local outbreak detected by our app, provide solution and remedy to take based on the detected disease and also to add community and expert support.\par\vspace{1em}
+
+
+\par
+
+\newpage

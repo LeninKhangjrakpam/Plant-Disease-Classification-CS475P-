@@ -1,0 +1,435 @@
+\documentclass[12pt, oneside, a4paper]{book}
+% \documentclass[12pt, a4paper]{report}
+\usepackage[export]{adjustbox}
+
+\usepackage[x11names]{xcolor} % Load xcolor with X11 color names
+% Define a custom dark green color
+\definecolor{DarkGreen}{RGB}{0, 210, 0}
+\definecolor{black}{RGB}{10, 10, 10}
+\definecolor{Blue}{RGB}{1, 152, 252}
+
+\usepackage{url}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\usepackage{geometry}
+\usepackage{subcaption}
+\usepackage{graphicx}
+
+\usepackage{background}
+ \backgroundsetup{contents={}}
+
+\usepackage{placeins}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{indentfirst}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{setspace}
+\usepackage{rotating}
+\usepackage{enumerate}
+\usepackage{pgfplots}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{cite}
+
+\usepackage{blindtext}
+
+\graphicspath{graphics}
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\pagenumbering{gobble}
+
+\newsavebox{\savefig}
+\begin{document}
+\newgeometry{top=6em, bottom=2em}
+\begingroup
+    \centering
+    \large \textcolor{black}{A PROJECT REPORT ON}\\
+    \Large \color{DarkGreen}\textbf{`` A COMPARATIVE STUDY OF VARIOUS IMAGE CLASSIFICATION MODELS AND THEIR INTERPRET-ABILITY USING THE PLANT VILLAGE DATASET ''}
+    \color{black}
+    \par\vspace{1em}
+    
+    \textcolor{Blue}{\normalsize \textit{SUBMITTED IN PARTIAL FULFILMENT OF THE REQUIREMENTS FOR THE AWARD OF THE DEGREE OF}} \\[1em]
+    \color{red}\large\textbf{BACHELOR OF ENGINEERING (B.E.)} \\
+    \color{red}\large\textbf{IN} \\
+    \color{red}\large\textbf{COMPUTER SCIENCE AND ENGINEERING (2020-2024)}\\ [2em]
+\endgroup
+
+\begingroup
+    \begin{center}
+        \large \textcolor{DarkGreen}{\underline{\textbf{Submitted By:}}}\\
+        \large \textcolor{Blue}{\textbf{Devraj Thokchom}}\\
+        \normalsize MU Roll No: \textbf{202009}\\
+        \large \textcolor{Blue}{\textbf{Deedal Wahengbam}}\\
+        \normalsize MU Roll No: \textbf{202013}\\
+        \large \textcolor{Blue}{\textbf{Lenin Khangjrakpam}}\\
+        \normalsize MU Roll No: \textbf{204036}\\ [2em]
+    \end{center}
+    
+    \begin{center}
+        \large \textcolor{DarkGreen}{\underline{\textbf{Under the Guidance of:}}}\\
+        \large \textcolor{Blue}{\textbf{Dr. Th Ibungomacha Singh}}\\
+        \normalsize \textbf{Head of Department, CSE}\\
+        \normalsize Manipur Institute of Technology\\ [1em]
+    \end{center}
+\endgroup
+
+\begingroup
+    \begin{center}
+        \includegraphics[scale=0.4]{graphics/MU Logo.png}\\[0.5em]
+        \color{red}\large \textbf{DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING}\\
+        \color{black}\normalsize \textit{(A Constituent College of Manipur University)}\\
+        \color{red}\textbf{\large MANIPUR INSTITUTE OF TECHNOLOGY}\\
+        \large \textbf{CANCHIPUR, MANIPUR, 795004}
+    \end{center}
+\endgroup
+\restoregeometry
+\newgeometry{top=10em, bottom=5em}
+
+% ----------------Tile Start----------------------------------------
+
+\newpage
+    \begin{center}
+        \large \textbf{A COMPARATIVE STUDY OF VARIOUS IMAGE CLASSIFICATION MODELS AND THEIR INTERPRET-ABILITY USING THE PLANT VILLAGE DATASET} \\
+        \vspace{1em}
+        \large $\text{Devraj Thokchom}^1$ \space \space \space $\text{Deedal Wahengbam}^2$ \space \space \space $\text{Lenin Khangjrakpam}^3$ \par
+        \vspace{0.5em}
+        August 2024  
+    \end{center}
+
+    \vspace*{\fill}
+    \par\vspace{-.5\ht\strutbox}\noindent\hrulefill\\
+    ${}^{[1]} \text{Manipur Institute of Technology (MIT) and devrajthok@gmail.com}$\\
+    ${}^{[2]} \text{Manipur Institute of Technology (MIT) and deedalwahengbam005@gmail.com }$\\
+    ${}^{[3]} \text{Manipur Institute of Technology (MIT) and leninkhangjrakpam@gmail.com}$\\
+    
+
+
+
+% -------------- Certificate -------------
+\newpage
+\backgroundsetup{
+contents={\includegraphics{graphics/MU Logo.png}},
+    angle=0,
+    scale=1,
+    opacity=0.1
+}
+\begingroup
+    \begin{center}
+        \textcolor{black}
+        {
+        \color{red}\large \text{DEPARTMENT OF COMPUTER SCIENCE \& ENGINEERING}\\
+        \normalsize \textbf{MANIPUR INSTITUTE OF TECHNOLOGY}\\
+        \normalsize Canchipur, IMPHAL, 795004\\[1em]
+        \includegraphics[scale=0.4]{graphics/MU Logo.png}\\[0.5em]
+        }
+        \textcolor{red}
+        {
+        \large \textit{\underline{\textbf{CERTIFICATE}}}
+        }
+    \end{center}
+\endgroup
+
+\begingroup
+    \begin{onehalfspace}
+  \color{black}
+  \textit{This is to certify that the project entitled \textbf{``A Comparative Study of Various Image Classification Models and their Interpret-Ability using the Plant Village Dataset''} is a genuine work done by}\\[1em]
+    \textit{\hspace*{4em}\textbf{Mr. Devraj Thokchom}, MU Roll No: \textbf{202009}\\
+    \hspace*{4em}\textbf{Mr. Deedal Wahengbam}, MU Roll No: \textbf{202013}\\
+    \hspace*{4em}\textbf{Mr. Lenin Khangjrakpam}, MU Roll No: \textbf{204036}}\\[1em]
+
+    \indent \textit{students of \textbf{B.E.} from \textbf{Manipur Institute of Technology} under my guidance and supervision. This project has not been submitted to any other examination and does not form part of any other project undertaken by the candidate.}\\
+    \indent \textit{I hereby forward this project work for the partial fulfillment of the requirements for the award of the degree of \textbf{Bachelor of Engineering in Computer Science and Engineering, 2024.}\\
+    I wish them all success in life.}
+    \end{onehalfspace}
+\endgroup
+
+\vspace{7em}
+
+\begingroup
+       \begin{flushright}
+        \begin{minipage}{0.6\textwidth}
+            \centering
+            \color{black}Head of Department \& Internal Project Guide \\
+            \vspace{1em}
+            \color{orange}\textbf{(Th. Ibungomacha Singh)} \\
+           \color{green} Department of Computer Science \& Engineering\\
+        \end{minipage}
+    \end{flushright}
+\endgroup
+
+%  ------------- Certificate 2 ------------------------------
+\newpage
+\backgroundsetup{
+contents={\includegraphics{graphics/MU Logo.png}},
+    angle=0,
+    scale=1,
+    opacity=0.1
+}
+\begingroup
+    \begin{center}
+        \textcolor{black}
+        {
+        \color{red}\large \text{DEPARTMENT OF COMPUTER SCIENCE \& ENGINEERING}\\
+        \normalsize \textbf{MANIPUR INSTITUTE OF TECHNOLOGY}\\
+        \normalsize Canchipur, IMPHAL, 795004\\[1em]
+        \includegraphics[scale=0.4]{graphics/MU Logo.png}\\[0.5em]
+        }
+        \textcolor{red}
+        {
+        \large \textit{\underline{\textbf{CERTIFICATE OF APPROVAL}}}
+        }
+    \end{center}
+\endgroup
+
+\begingroup
+    \begin{onehalfspace}
+  \color{black}
+  \textit{This is to certify that the project entitled \textbf{``A Comparative Study of Various Image Classification Models and their Interpret-Ability using the Plant Village Dataset''} is a genuine work done by}\\[1em]
+    \textit{\hspace*{4em}\textbf{Mr. Devraj Thokchom}, MU Roll No: \textbf{202009}\\
+    \hspace*{4em}\textbf{Mr. Deedal Wahengbam}, MU Roll No: \textbf{202013}\\
+    \hspace*{4em}\textbf{Mr. Lenin Khangjrakpam}, MU Roll No: \textbf{204036}}\\[1em]
+
+    \textit{Further certified that no part of this project constitutes any part of a book or a journal already published elsewhere for the award of any other Degree of Bachelor of Engineering Department of the Institute.}\par
+    \textit{I wish them all success in their academic endeavor.}\par
+    \end{onehalfspace}
+\endgroup
+
+\vspace{7em}
+
+\begingroup
+    \begin{minipage}[c]{.5\textwidth}
+    \RaggedRight
+    \large Date.....  \par
+    \large Place.....  \par
+    \end{minipage}%
+    \begin{minipage}[c]{.5\textwidth}
+    \RaggedRight
+    \normalsize \textbf{Signature of Examiner}\\
+    \end{minipage}    
+\endgroup
+
+% -------------- Undertaking Start ----------------------------------
+\newpage
+\begingroup
+    \begin{center}
+        \textcolor{black}
+        {
+        \color{red}\large \text{DEPARTMENT OF COMPUTER SCIENCE \& ENGINEERING}\\
+        \normalsize \textbf{MANIPUR INSTITUTE OF TECHNOLOGY}\\
+        \normalsize Canchipur, IMPHAL, 795004\\[1em]
+        \includegraphics[scale=0.4]{graphics/MU Logo.png}\\[0.5em]
+        }
+        \textcolor{red}
+        {
+        \large \textit{\underline{\textbf{UNDERTAKING}}}
+        }
+    \end{center}
+\endgroup
+
+\begingroup
+    \begin{onehalfspace}   
+    \textit{
+    We declare that the work presented in this project titled \textbf{``A Comparative Study of Various Image Classification Models and their Interpret-Ability using the Plant Village Dataset''} submitted to the \textit{Department of Computer Science \& Engineering, Manipur Institute of Technology}, for the fulfilment of the requirement of Bachelor of Engineering in Computer Science \& Engineering, is our original work. We have not plagiarized or submitted the same work for the award of any other degree. When we used external resources, we commit to properly citing all sources of such resources in our project to give due credit to the original authors. Any external content used has been appropriately referenced in accordance with academic standards. In case this understanding is found incorrect, we accept that our degree may be unconditionally withdrawn.}\\[1em]
+    \textit{\hspace*{4em}\textbf{Mr. Devraj Thokchom}, MU Roll No: \textbf{202009}\\
+    \hspace*{4em}\textbf{Mr. Deedal Wahengbam}, MU Roll No: \textbf{202013}\\
+    \hspace*{4em}\textbf{Mr. Lenin Khangjrakpam}, MU Roll No: \textbf{204036}}\\[1em]
+
+    
+    \end{onehalfspace}
+\endgroup
+
+\vspace{7em}
+
+\begingroup
+       \begin{flushright}
+        \begin{minipage}{0.6\textwidth}
+            \centering
+            Head of Department \& Internal Project Guide \\
+            \vspace{1em}
+            \textcolor{orange}{(Th. Ibungomacha Singh) \\}
+            \textcolor{green}{Department of Computer Science \& Engineering}
+        \end{minipage}
+    \end{flushright}
+\endgroup
+
+% -------------- Undertaking End ----------------------------------
+% --------------------------   Declaration Start ------------
+\newpage
+\begingroup
+    \begin{center}
+        \textcolor{black}
+        {
+        \color{red}\large \text{DEPARTMENT OF COMPUTER SCIENCE \& ENGINEERING}\\
+        \normalsize \textbf{MANIPUR INSTITUTE OF TECHNOLOGY}\\
+        \normalsize Canchipur, IMPHAL, 795004\\[1em]
+        \includegraphics[scale=0.4]{graphics/MU Logo.png}\\[0.5em]
+        }
+        \textcolor{red}
+        {
+        \large \textit{\underline{\textbf{DECLARATION}}}
+        }
+    \end{center}
+\endgroup
+
+
+\begingroup
+    \justifying
+    \textit{
+    \color{black}\normalsize We, \textbf{Devraj Thochom (202009), Deedal Wahengbam (202013)} and \textbf{Lenin Khangjrakpam (204036)}, students  of Bachelor of Engineering in Computer Science and Engineering of Manipur Institute of Technology, hereby declare that the project entitled \textbf{\textit{``A Comparative Study of Various Image Classification Models and their Interpret-ability using the Plant Village dataset''}} has been carried out independently at the Institute under the guidance of \textbf{Professor Th Ibungomacha}, Head of Department (HOD) of Computer Science and Engineering.}
+    \par\vspace{1em}
+    \textit{We hereby declare that the work submitted in the thesis is our own, except where acknowledged in the text and has not been previously submitted for the award of the degree of Manipur Institute of Technology.}
+    \par \vspace{12em}
+\endgroup
+
+\begingroup
+    \begin{minipage}[c]{.5\textwidth}
+    \RaggedRight
+    \large Date.....  \par
+    \large Place.....  \par
+    \end{minipage}%
+    \begin{minipage}[c]{.5\textwidth}
+    \RaggedRight
+    \normalsize \textbf{Deedal Wahengbam}\\
+    \normalsize \textbf{Devraj Thokchom}\\
+    \normalsize \textbf{Lenin Khangjrakpam}\\
+    \end{minipage}    
+\endgroup
+
+% ----------- Acknowledgement Start ---------------
+\newpage
+\begingroup
+    \begin{center}
+        \textcolor{black}
+        {
+        \color{red}\large \text{DEPARTMENT OF COMPUTER SCIENCE \& ENGINEERING}\\
+        \normalsize \textbf{MANIPUR INSTITUTE OF TECHNOLOGY}\\
+        \normalsize Canchipur, IMPHAL, 795004\\[1em]
+        % \includegraphics[scale=0.4]{graphics/MU Logo.png}\\[0.5em]
+        }
+        \textcolor{red}
+        {
+        \large \textit{\underline{\textbf{ACKNOWLEDGEMENT}}}
+        }
+    \end{center}
+\endgroup
+
+
+\begingroup
+    \justifying
+     \textit{\color{black}\normalsize First and Foremost, we would like to express our deepest gratitude to \textbf{Professor Th Ibungomacha}, Head of Department (HOD) of Computer Science and Engineering, Manipur Institute of Technology for his valuable advice, guidance, and for providing us the opportunity to carry out our project entitled: \textit{\textbf{A Comparative Study of Various Image Classification Models and their Interpret-ability using the Plant Village dataset}}.}
+    \par \vspace{0.5em}
+    \textit{\normalsize We are also thankful to \textbf{Professor N Basanta Singh}, Principal, Manipur Institute of Technology, for providing us the opportunity to undergo our project in Manipur Institute of Technology.}\par \vspace{0.5em}
+    \normalsize \textit{We express our deep sense of gratitude and thanks to all other staff members for their keen interest and help in our project development.}\par \vspace{0.5em}
+    \normalsize \textit{We are also thankful to our colleagues for their kind co-operation by giving us inspiration and encouragement throughout the development of this project.}\par \vspace{12em}
+\endgroup
+
+\begingroup
+    \begin{minipage}[c]{.5\textwidth}
+    \RaggedRight
+    \large Date.....  \par
+    \large Place.....  \par
+    \end{minipage}%
+    \begin{minipage}[c]{.5\textwidth}
+    \RaggedRight
+    \normalsize \textbf{Deedal Wahengbam}\\
+    \normalsize \textbf{Devraj Thokchom}\\
+    \normalsize \textbf{Lenin Khangjrakpam}\\
+    \end{minipage}    
+\endgroup
+
+% ------ Acknowledgement end --------------------
+
+
+% \begingroup
+%     \centering
+%     \color{red}\LARGE \textbf{ACKNOWLEDGEMENT}\par \vspace{1em}
+%     \justifying
+%     \color{black}\large First and Foremost, we would like to express our deepest gratitude to \textbf{Professor Th Ibungomacha}, Head of Department (HOD) of Computer Science and Engineering, Manipur Institute of Technology for his valuable advice, guidance, and for providing us the opportunity to carry out our project entitled: \textit{\textbf{A Comparative Study of Various Image Classification Models and their Interpret-ability using the Plant Village dataset}}.
+%     \par \vspace{0.5em}
+%     \large We are also thankful to \textbf{Professor N Basanta Singh}, Principal, Manipur Institute of Technology, for providing us the opportunity to undergo our project in Manipur Institute of Technology.\par \vspace{0.5em}
+%     \large We express our deep sense of gratitude and thanks to all other staff members for their keen interest and help in our project development.\par \vspace{0.5em}
+%     \large We are also thankful to our colleagues for their kind co-operation by giving us inspiration and encouragement throughout the development of this project.\par \vspace{12em}
+% \endgroup
+
+% \begingroup
+%     \begin{minipage}[c]{.5\textwidth}
+%     \RaggedRight
+%     \large Date.....  \par
+%     \large Place.....  \par
+%     \end{minipage}%
+%     \begin{minipage}[c]{.5\textwidth}
+%     \RaggedRight
+%     \normalsize \textbf{Deedal Wahengbam}\\
+%     \normalsize \textbf{Devraj Thokchom}\\
+%     \normalsize \textbf{Lenin Khangjrakpam}\\
+%     \end{minipage}    
+% \endgroup
+
+
+\newpage
+% \NoBgThispage
+\backgroundsetup{contents={}}
+\begingroup
+    \begin{center}
+        \LARGE \textbf{ABSTRACT}\\
+    \end{center}
+    \justifying
+    \normalsize In this study, we conduct a comprehensive comparative analysis of various image classification machine learning models using the Plant Village dataset, which we reduced to 11 distinct classes of plant diseases. Leveraging the power of transfer learning and fine-tuning, we evaluate three pre-trained CNN models—\textbf{VGG16, Xception, and MobileNetV2}—as base models. To further compare performance with nonneural network models, we utilize the pre-trained MobileNetV2 model as a feature extractor, training a \textbf{Support Vector Machine (SVM), K-Nearest Neighbors (KNN), Random Forest and Extreme Gradient Boosting (XGBoost)} classifiers on the extracted features. Our findings reveal that neural network-based models, particularly those using transfer learning, significantly outperform traditional classifiers in terms of accuracy.\par \vspace{1em}
+    Additionally, we design and train a custom CNN model from scratch named \textbf{\textit{CNN10L}}, structured similarly to the VGG architecture, which, while achieving commendable accuracy, still falls short of the pre-trained models' performance. \par \vspace{1em}
+    To gain deeper insights into the model's behavior, we also perform an in-depth analysis of the fine tuned (on Plant Village Dataset) VGG16-based model by visualizing its convolutional layers and interpreting the learned features. Techniques such as image masking and activation mapping are employed to understand the model's focus areas and decision-making process.\par \vspace{1em}
+    To further interpret our CNN model, we also, perform visualization of the feature extracted by our model on a 2D and 3D feature space using \textbf{PCA and t-SNE}. We also used a \textbf{cosine similarity score} to find all the \textbf{\textit{N}} data instances that are nearest neighbors to a given/query feature vector (extracted from image)
+ \par\vspace{1em}
+    Our results underscore the efficacy of transfer learning in image classification tasks and provide a detailed comparison of different model architectures and classification approaches. This study not only highlights the superior performance of fine-tuned pre-trained models but also sheds light on the internal workings of CNNs through comprehensive visualization techniques.\par\vspace{1em}
+    
+    \large \textbf{Keywords:} \par \vspace{1em}
+    \normalsize    Convolutional Neural Network, Transfer Learning, Fine Tuning, Plant Disease Classification, Image Classification, Plant Village Dataset, VGG16, MobileNetV2, Xception, CNN10L, CNN Model Interpretation, Support Vector Machine (SVM), K-Nearest Neighbors (KNN), Random Forest,  Extreme Gradient Boosting (XGBoost), Feature Extraction, Model Performance Comparison, Cosine Similarity, PCA, t-SNE, Agricultural Technology
+\endgroup
+
+% Create the table of contents
+\tableofcontents
+
+\listoftables
+\listoffigures 
+
+\input{chapter1}
+
+
+\input{chapter2}
+
+
+\input{chapter3}
+
+
+\input{chapter4}
+
+
+\input{chapter5}
+
+
+\input{chapter6}
+
+
+\input{chapter11}
+
+\input{chapter7}
+
+% \input{chapter8}
+
+\bibliography{bibliography} 
+\bibliographystyle{ieeetr}
+
+\input{chapter9}
+
+% \input{chapter10}
+\newpage
+
+\end{document}
